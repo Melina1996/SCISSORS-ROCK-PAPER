@@ -7,6 +7,7 @@ export default function ResultRound(props) {
 
     <h1 className='text-white text-4xl'>{props.resultRound}</h1>
     
+    {/* set madeChoice back to false, so we switch back to the three option-btns */}
     <button onClick={()=> props.setMadeChoice(false)} className='bg-white text-red px-10 py-3 rounded-lg hover:text-[#C33442ff]'>PLAY AGAIN</button>
 
     </div>
