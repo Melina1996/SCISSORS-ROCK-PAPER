@@ -37,7 +37,7 @@ body {
   box-shadow: inset black 0px 0px 30px -15px; 
 }
 
-/* Media */
+/* Media for Mobile */
 
 /*Mobile M&L*/
 @media (min-width: 321px) and (max-width: 425px) {
