@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        "triangle": "url('../../../assets/img/bg-triangle.svg')"
+      }
+    },
   },
   plugins: [],
 }
