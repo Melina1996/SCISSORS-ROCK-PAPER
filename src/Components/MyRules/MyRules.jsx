@@ -8,7 +8,7 @@ export default function MyRules(props) {
 
             <div className='w-[100%] h-[20%] flex justify-center items-center'>
 
-                <h1 className='text-2xl w-[50%] h-[20%] pl-6 flex justify-start items-center'>RULES</h1>
+                <h1 className='text-3xl text-[#3C4060ff] w-[50%] h-[20%] pl-6 flex justify-start items-center font-barlow font-semibold'>RULES</h1>
 
                 <div className='text-2xl w-[50%] h-[20%] pr-6 justify-end flex items-center'>
 

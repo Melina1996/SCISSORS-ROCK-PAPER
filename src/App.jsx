@@ -49,12 +49,12 @@ function App() {
 
   function winnerRound(playerChoice,houseChoice){
     if(playerChoice == houseChoice){
-      setResultRound("IT'S A TIE!")
+      setResultRound("IT'S A TIE")
     } else if((playerChoice == Scissors && houseChoice == Paper) || (playerChoice == Rock && houseChoice == Scissors) || (playerChoice == Paper && houseChoice == Rock)){
-      setResultRound("YOU WON!")
+      setResultRound("YOU WON")
       setScorePlayer(scorePlayer + 1)
     } else {
-      setResultRound("YOU LOST!")
+      setResultRound("YOU LOST")
       if(scorePlayer > 0){
         setScorePlayer(scorePlayer - 1)
       } else{
@@ -87,7 +87,7 @@ function App() {
 
           :
 
-        <Choices resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} resultRound={resultRound} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        <Choices resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
         }
 
@@ -95,7 +95,7 @@ function App() {
 
 
     <div className='absolute right-5 bottom-5'>
-        <button onClick={()=>{openRules == false ? setOpenRules(true) : ""}} className='border-white font-semibold text-white rounded-lg border-solid border-2 flex justify-center items-center px-6 py-2'>RULES</button>
+        <button onClick={()=>{openRules == false ? setOpenRules(true) : ""}} className='border-white text-white rounded-lg border-solid border-2 flex justify-center items-center px-6 py-2 font-barlow font-semibold tracking-widest'>RULES</button>
     </div>  
 
       {
