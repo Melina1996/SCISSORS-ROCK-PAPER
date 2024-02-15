@@ -30,20 +30,27 @@ function App() {
   //color bg & box-shadow
 
   const[styleBtn,setStyleBtn] = useState([{
+    img: Paper,
     bgColor : "bg-[#4F6BF3ff]",
     shadow : "shadow-lila"
   },
   {
+    img : Scissors,
     bgColor : "bg-[#EFA41Cff]",
     shadow : "shadow-yellow"
   },
   {
+    img: Rock,
     bgColor : "bg-[#DB324Fff]",
     shadow : "shadow-red"
   }
   ])
 
+  //style Btn Player Choice
   const[styleBtnSelected,setStyleBtnSelected] = useState([""])
+
+  //style House Choice
+  const[styleBtnSelectedHouse,setStyleBtnSelectedHouse] = useState([""])
 
 
   //chose random choice computer
@@ -88,6 +95,13 @@ function App() {
     setChoicePlayer(choice)
     const houseChosing = randomChoice()
     setChoiceHouse(houseChosing)
+    if(houseChosing == Paper){
+      setStyleBtnSelectedHouse([styleBtn[0].bgColor,styleBtn[0].shadow])
+    } else if(houseChosing == Scissors){
+      setStyleBtnSelectedHouse([styleBtn[1].bgColor,styleBtn[1].shadow])
+    } else if(houseChosing == Rock){
+      setStyleBtnSelectedHouse([styleBtn[2].bgColor,styleBtn[2].shadow])
+    }
     winnerRound(choice,houseChosing)
 
   }
@@ -102,13 +116,13 @@ function App() {
 
     <div className='w-[90%] h-[70%] flex justify-center items-center'>
 
-    { scorePlayer !=4 ?
+    { scorePlayer !=3 ?
         
         (madeChoice == false ? <Buttons styleBtn={styleBtn} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
           :
 
-        <Choices styleBtnSelected={styleBtnSelected} resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        <Choices styleBtnSelected={styleBtnSelected} styleBtnSelectedHouse={styleBtnSelectedHouse} resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
         )
         
 

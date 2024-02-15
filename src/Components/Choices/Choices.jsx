@@ -16,7 +16,7 @@ export default function Choices(props) {
 
         </div>
 
-        <div className='md:w-[20%] w-[100%] md:h-[70%] h-[200px] absolute bottom-5 flex flex-col justify-center items-center md:gap-10 md:order-2 order-last'>
+        <div className='md:w-[20%] w-[100%] md:h-[70%] h-[200px] absolute bottom-5 flex flex-col md:justify-start justify-center items-center md:gap-10 md:order-2 order-last'>
 
             <h1 className='text-white text-4xl'>{props.resultRound}</h1>
             
@@ -28,10 +28,7 @@ export default function Choices(props) {
 
             <h1 className='text-white md:text-2xl order-last md:order-first'>THE HOUSE PICKED</h1>
 
-            <div className={`${props.resultRound == "YOU LOST" ? "myPulse" : ""} relative rounded-full md:w-[210px] md:h-[210px] w-[150px] h-[150px]  flex justify-center items-center top-5 left-0 ${props.choiceHouse == props.Scissors? "bg-[#EFA41Cff]" 
-        : props.choiceHouse == props.Rock ? "bg-[#DF405Eff]" 
-        : props.choiceHouse == props.Paper ? "bg-[#4F6BF3ff]" 
-        : ""}`}>
+            <div className={`${props.resultRound == "YOU LOST" ? "myPulse" : ""} ${props.styleBtnSelectedHouse[0]} ${props.styleBtnSelectedHouse[1]} relative rounded-full md:w-[210px] md:h-[210px] w-[150px] h-[150px]  flex justify-center items-center top-5 left-0 `}>
 
                 <div className="cursor-pointer bg-white md:w-[170px] md:h-[170px] w-[110px] h-[110px] p-6 rounded-full flex justify-center items-center"><img className='w-[70px] h-[80px]' src={props.choiceHouse} alt="" /></div>
             
