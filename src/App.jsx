@@ -3,6 +3,7 @@ import Score from './Components/Score/Score'
 import Buttons from './Components/Buttons/Buttons'
 import MyRules from './Components/MyRules/MyRules'
 import Choices from './Components/Choices/Choices'
+import Result from './Components/Result/Result'
 
 import Paper from "./assets/img/icon-paper.svg"
 import Rock from "./assets/img/icon-rock.svg"
@@ -25,6 +26,25 @@ function App() {
   //winning text
 
   const[resultRound,setResultRound] = useState("")
+
+  //color bg & box-shadow
+
+  const[styleBtn,setStyleBtn] = useState([{
+    bgColor : "bg-[#4F6BF3ff]",
+    shadow : "shadow-lila"
+  },
+  {
+    bgColor : "bg-[#EFA41Cff]",
+    shadow : "shadow-yellow"
+  },
+  {
+    bgColor : "bg-[#DB324Fff]",
+    shadow : "shadow-red"
+  }
+  ])
+
+  const[styleBtnSelected,setStyleBtnSelected] = useState([""])
+
 
   //chose random choice computer
 
@@ -80,16 +100,23 @@ function App() {
       <Score scorePlayer={scorePlayer}/>
     </div>
 
-    <div className='w-[80%] h-[70%] flex justify-center items-center'>
+    <div className='w-[90%] h-[70%] flex justify-center items-center'>
 
-        {
-        madeChoice == false ? <Buttons round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+    { scorePlayer !=4 ?
+        
+        (madeChoice == false ? <Buttons styleBtn={styleBtn} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
           :
 
-        <Choices resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        <Choices styleBtnSelected={styleBtnSelected} resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        )
+        
 
-        }
+      :
+
+      <Result setScorePlayer={setScorePlayer} setMadeChoice={setMadeChoice}/>
+
+      } 
 
     </div>
 

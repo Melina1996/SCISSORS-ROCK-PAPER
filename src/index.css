@@ -33,4 +33,29 @@ body {
   
 }
 
+.myBtn{
+  box-shadow: inset black 0px 0px 30px -15px; 
+}
+
+/* Media */
+
+/*Mobile M&L*/
+@media (min-width: 321px) and (max-width: 425px) {
+
+  .myPulse::after{
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    border: 8px solid white;
+    border-radius: 50%;
+    animation: pulse 2s infinite linear;
+}
+
+}
+
+
+
 
