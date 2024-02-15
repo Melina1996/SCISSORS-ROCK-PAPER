@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Score from './Components/Score/Score'
 import Buttons from './Components/Buttons/Buttons'
 import MyRules from './Components/MyRules/MyRules'
-import Choices from './Components/Choices/Choices'
 import Result from './Components/Result/Result'
+import ResultRound from './Components/ResultRound/ResultRound'
 
 import Paper from "./assets/img/icon-paper.svg"
 import Rock from "./assets/img/icon-rock.svg"
@@ -53,6 +53,7 @@ function App() {
   const[styleBtnSelectedHouse,setStyleBtnSelectedHouse] = useState([""])
 
 
+
   //chose random choice computer
 
   let options=[Scissors,Rock,Paper]
@@ -68,7 +69,8 @@ function App() {
 
     // get random item with index within my array "options"
     let item = options[randomIndex];
-    console.log(item)
+
+
 
     return item;
 
@@ -118,11 +120,40 @@ function App() {
 
     { scorePlayer !=3 ?
         
-        (madeChoice == false ? <Buttons styleBtn={styleBtn} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
-
+        (madeChoice == false ?
+          <div className='bg-triangle bg-no-repeat w-[370px] h-[370px] md:w-[420px] md:h-[420px] bg-center flex relative'>
+          <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:top-5 top-[-2px] left-[-2px] md:left-0"} bg={styleBtn[0].bgColor} shadow={styleBtn[0].shadow} styleBtn={styleBtn} img={Paper} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+          <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:top-5 md:right-0 top-[-2px] right-[-2px]"} bg={styleBtn[1].bgColor} shadow={styleBtn[1].shadow} styleBtn={styleBtn} img={Scissors} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+          <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:bottom-5 bottom-8 left-1/2 transform -translate-x-1/2"} bg={styleBtn[2].bgColor} shadow={styleBtn[2].shadow} styleBtn={styleBtn} img={Rock} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+          </div>
           :
 
-        <Choices styleBtnSelected={styleBtnSelected} styleBtnSelectedHouse={styleBtnSelectedHouse} resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        <div className='w-[100%] md:w-[100%] h-[100%] flex justify-center items-center pt-4 font-barlow font-semibold tracking-widest'>
+
+<div className='relative w-[100%] h-[100%] flex justify-center items-start gap-10'>
+        
+        <div className='md:w-[38%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-first order-first'>
+
+            <h1 className='text-white md:text-2xl order-last md:order-first'>YOU PICKED</h1>
+
+            <Buttons styling={"relative rounded-full md:w-[210px] md:h-[210px] w-[150px] h-[150px] flex justify-center items-center top-5 left-0"} bg={styleBtnSelected[0]} shadow={styleBtnSelected[1]} img={choicePlayer} pulse={`${resultRound == "YOU WON" ? "myPulse" : ""}`}/>
+
+        </div>
+
+        <ResultRound resultRound={resultRound} setMadeChoice={setMadeChoice}/>
+
+        <div className='md:w-[38%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-3 order-last'>
+
+            <h1 className='text-white md:text-2xl order-last md:order-first'>THE HOUSE PICKED</h1>
+
+            <Buttons styling={"relative rounded-full md:w-[210px] md:h-[210px] w-[150px] h-[150px]  flex justify-center items-center top-5 left-0"} bg={styleBtnSelectedHouse[0]} shadow={styleBtnSelectedHouse[1]} img={choiceHouse} pulse={`${resultRound == "YOU LOST" ? "myPulse" : ""}`}/>
+
+
+        </div>
+
+        </div>
+
+        </div>
         )
         
 
@@ -148,5 +179,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App
