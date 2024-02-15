@@ -8,7 +8,10 @@ export default function Choices(props) {
 
             <h1 className='text-white text-2xl'>YOU PICKED</h1>
 
-            <div className="bg-[#4F6BF3ff] rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0">
+            <div className={`rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choicePlayer == props.Scissors? "bg-[#EFA41Cff]" 
+        : props.choicePlayer == props.Rock ? "bg-[#DF405Eff]" 
+        : props.choicePlayer == props.Paper ? "bg-[#4F6BF3ff]" 
+        : ""}`}>
 
                 <div className="cursor-pointer bg-white w-[170px] h-[170px] p-6 rounded-full flex justify-center items-center"><img className='w-[70px] h-[80px]' src={props.choicePlayer} alt="" /></div>
             </div>
@@ -26,7 +29,10 @@ export default function Choices(props) {
 
             <h1 className='text-white text-2xl'>THE HOUSE PICKED</h1>
 
-            <div className="bg-[#4F6BF3ff] rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0">
+            <div className={`rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choiceHouse == props.Scissors? "bg-[#EFA41Cff]" 
+        : props.choiceHouse == props.Rock ? "bg-[#DF405Eff]" 
+        : props.choiceHouse == props.Paper ? "bg-[#4F6BF3ff]" 
+        : ""}`}>
 
                 <div className="cursor-pointer bg-white w-[170px] h-[170px] p-6 rounded-full flex justify-center items-center"><img className='w-[70px] h-[80px]' src={props.choiceHouse} alt="" /></div>
             

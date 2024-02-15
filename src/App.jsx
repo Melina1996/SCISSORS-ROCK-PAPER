@@ -30,6 +30,9 @@ function App() {
 
   let options=[Scissors,Rock,Paper]
 
+  //to verify if rules menu opened or not
+  const [openRules, setOpenRules] = useState(false)
+
   function randomChoice(){
 
     // get random index within my array "options"
@@ -52,6 +55,11 @@ function App() {
       setScorePlayer(scorePlayer + 1)
     } else {
       setResultRound("YOU LOST!")
+      if(scorePlayer > 0){
+        setScorePlayer(scorePlayer - 1)
+      } else{
+        setScorePlayer(0)
+      }
     }
   }
 
@@ -74,19 +82,27 @@ function App() {
 
     <div className='w-[80%] h-[70%] flex justify-center items-center'>
 
-      {
+        {
         madeChoice == false ? <Buttons round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
-        :
+          :
 
-        <Choices setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} resultRound={resultRound}/>
+        <Choices setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} resultRound={resultRound} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
+        }
 
-      }
     </div>
 
 
-    <MyRules />    
+    <div className='absolute right-5 bottom-5'>
+        <button onClick={()=>{openRules == false ? setOpenRules(true) : ""}} className='border-white font-semibold text-white rounded-lg border-solid border-2 flex justify-center items-center px-6 py-2'>RULES</button>
+    </div>  
+
+      {
+
+        openRules && <MyRules openRules={openRules} setOpenRules={setOpenRules}/>
+
+      } 
 
     </div>
   )
