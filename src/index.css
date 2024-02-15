@@ -6,6 +6,7 @@ body {
   margin: 0;
 }
 
+/* add after, in order to give btn a circle to which the animation is applied to */
 .myPulse::after{
     position: absolute;
     content: "";
