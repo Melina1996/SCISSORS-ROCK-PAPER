@@ -114,7 +114,7 @@ function App() {
       <Score scorePlayer={scorePlayer}/>
     </div>
 
-    <div className='w-[90%] h-[70%] flex justify-center items-center'>
+    <div className='w-[95%] h-[70%] flex justify-center items-center'>
 
     { scorePlayer !=3 ?
         

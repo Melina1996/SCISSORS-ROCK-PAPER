@@ -4,8 +4,9 @@ export default function Choices(props) {
   return (
     <div className='w-[100%] md:w-[100%] h-[100%] flex justify-center items-center pt-4 font-barlow font-semibold tracking-widest'>
 
-    <div className='relative w-[100%] h-[100%] flex justify-center items-start gap-3'>
-        <div className='md:w-[40%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-first order-first'>
+    <div className='relative w-[100%] h-[100%] flex justify-center items-start gap-10'>
+        
+        <div className='md:w-[38%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-first order-first'>
 
             <h1 className='text-white md:text-2xl order-last md:order-first'>YOU PICKED</h1>
 
@@ -16,7 +17,7 @@ export default function Choices(props) {
 
         </div>
 
-        <div className='md:w-[20%] w-[100%] md:h-[70%] h-[200px] absolute bottom-5 flex flex-col md:justify-start justify-center items-center md:gap-10 md:order-2 order-last'>
+        <div className='md:w-[24%] w-[100%] md:h-[70%] h-[200px] absolute bottom-5 flex flex-col md:justify-start justify-center items-center md:gap-10 md:order-2 order-last'>
 
             <h1 className='text-white text-4xl'>{props.resultRound}</h1>
             
@@ -24,7 +25,7 @@ export default function Choices(props) {
 
         </div>
 
-        <div className='md:w-[40%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-3 order-last'>
+        <div className='md:w-[38%] w-[50%] h-[70%] flex flex-col md:justify-center items-center gap-10 md:order-3 order-last'>
 
             <h1 className='text-white md:text-2xl order-last md:order-first'>THE HOUSE PICKED</h1>
 
