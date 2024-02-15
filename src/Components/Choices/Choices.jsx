@@ -8,7 +8,7 @@ export default function Choices(props) {
 
             <h1 className='text-white text-2xl'>YOU PICKED</h1>
 
-            <div className={`rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choicePlayer == props.Scissors? "bg-[#EFA41Cff]" 
+            <div className={`${props.resultRound == "YOU WON!" ? "myPulse" : ""} relative rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choicePlayer == props.Scissors? "bg-[#EFA41Cff]" 
         : props.choicePlayer == props.Rock ? "bg-[#DF405Eff]" 
         : props.choicePlayer == props.Paper ? "bg-[#4F6BF3ff]" 
         : ""}`}>
@@ -29,7 +29,7 @@ export default function Choices(props) {
 
             <h1 className='text-white text-2xl'>THE HOUSE PICKED</h1>
 
-            <div className={`rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choiceHouse == props.Scissors? "bg-[#EFA41Cff]" 
+            <div className={`${props.resultRound == "YOU LOST!" ? "myPulse" : ""} relative rounded-full w-[210px] h-[210px] flex justify-center items-center top-5 left-0 ${props.choiceHouse == props.Scissors? "bg-[#EFA41Cff]" 
         : props.choiceHouse == props.Rock ? "bg-[#DF405Eff]" 
         : props.choiceHouse == props.Paper ? "bg-[#4F6BF3ff]" 
         : ""}`}>

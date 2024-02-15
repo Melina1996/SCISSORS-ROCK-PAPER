@@ -87,7 +87,7 @@ function App() {
 
           :
 
-        <Choices setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} resultRound={resultRound} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
+        <Choices resultRound={resultRound} setMadeChoice={setMadeChoice} choicePlayer={choicePlayer} choiceHouse={choiceHouse} resultRound={resultRound} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
 
         }
 

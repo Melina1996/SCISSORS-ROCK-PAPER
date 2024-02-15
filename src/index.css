@@ -5,3 +5,32 @@
 body {
   margin: 0;
 }
+
+.myPulse::after{
+    position: absolute;
+    content: "";
+    width: 210px;
+    height: 210px;
+    top: 0;
+    left: 0;
+    border: 8px solid white;
+    border-radius: 50%;
+    animation: pulse 2s infinite linear;
+}
+
+@keyframes pulse {
+  0%{
+    opacity: 0;
+    transform: scale (0.95);
+  }
+  10%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: scale(1.3)
+  }
+  
+}
+
+

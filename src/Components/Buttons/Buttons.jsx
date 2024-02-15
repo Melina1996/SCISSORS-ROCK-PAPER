@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Buttons(props) {
   return (
-    <div className='bg-triangle  bg-no-repeat w-[420px] h-[420px] bg-center flex relative'>
+    <div className='bg-triangle bg-no-repeat w-[420px] h-[420px] bg-center flex relative'>
 
         <div className="bg-[#4F6BF3ff] rounded-full w-[160px] h-[160px] flex justify-center items-center absolute top-5 left-0">
             <button onClick={()=>{props.round(props.Paper);props.setMadeChoice(true)}}  className="cursor-pointer bg-white w-[120px] h-[120px] p-6 rounded-full flex justify-center items-center"><img className='w-[70px] h-[80px]' src="../../../assets/img/icon-paper.svg" alt="" /></button>
