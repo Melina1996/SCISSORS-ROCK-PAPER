@@ -19,6 +19,7 @@ body {
     animation: pulse 2s infinite linear;
 }
 
+/* animation that makes "ring" get bigger and smaller again and at the same time is gaining and losing opacity */
 @keyframes pulse {
   0%{
     opacity: 0;
