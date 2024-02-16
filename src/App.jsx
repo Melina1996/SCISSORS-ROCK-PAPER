@@ -5,12 +5,6 @@ import MyRules from './Components/MyRules/MyRules'
 import Result from './Components/Result/Result'
 import ResultRound from './Components/ResultRound/ResultRound'
 
-import Paper from "./assets/img/icon-paper.svg"
-import Rock from "./assets/img/icon-rock.svg"
-import Scissors from "./assets/img/icon-scissors.svg"
-import Triangle from "./assets/img/bg-triangle.svg"
-import Close from "./assets/img/icon-close.svg"
-import Rules from "./assets/img/image-rules.svg"
 
 
 function App() {
