@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage:{
-        "triangle": "url('../../../assets/img/bg-triangle.svg')"
+        "triangle": "url('./src/assets/img/bg-triangle.svg')"
       },
       fontFamily:{
         "barlow" : ['Barlow Semi Condensed','sans-serif']
