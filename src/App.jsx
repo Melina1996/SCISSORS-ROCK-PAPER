@@ -175,7 +175,7 @@ function App() {
     <div className='absolute md:right-5 md:bottom-5 bottom-0'>
 
       {/* if rules menu is not open (false), then its openend by btnClick, see ternary condition below */}
-        <button onClick={()=>{openRules == false ? setOpenRules(true) : ""}} className='border-white text-white rounded-lg border-solid border-2 flex justify-center items-center px-6 py-2 font-barlow font-semibold tracking-widest'>RULES</button>
+        <button onClick={()=>{openRules == false ? setOpenRules(true) : ""}} className='border-white text-white rounded-lg border-solid border-2 flex justify-center items-center px-6 py-2 font-barlow font-semibold tracking-widest hover:text-black hover:bg-white'>RULES</button>
     </div>  
 
       {
