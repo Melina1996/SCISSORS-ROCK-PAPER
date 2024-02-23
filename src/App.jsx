@@ -125,7 +125,7 @@ function App() {
     { scorePlayer !=3 ?
         
         (madeChoice == false ?
-          <div style={{backgroundImage:`url(./src/assets/img/bg-triangle.svg)`}} className={`bg-no-repeat w-[370px] h-[370px] md:w-[420px] md:h-[420px] bg-center flex relative`}>
+          <div className={`bg-no-repeat bg-triangle w-[370px] h-[370px] md:w-[420px] md:h-[420px] bg-center flex relative`}>
           <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:top-5 top-[-2px] left-[-2px] md:left-0"} bg={styleBtn[0].bgColor} shadow={styleBtn[0].shadow} styleBtn={styleBtn} img={Paper} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
           <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:top-5 md:right-0 top-[-2px] right-[-2px]"} bg={styleBtn[1].bgColor} shadow={styleBtn[1].shadow} styleBtn={styleBtn} img={Scissors} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
           <Buttons styling={"rounded-full w-[140px] h-[140px] md:w-[160px] md:h-[160px] flex justify-center items-center absolute md:bottom-5 bottom-8 left-1/2 transform -translate-x-1/2"} bg={styleBtn[2].bgColor} shadow={styleBtn[2].shadow} styleBtn={styleBtn} img={Rock} setStyleBtnSelected={setStyleBtnSelected} round={round} setMadeChoice={setMadeChoice} Scissors={Scissors} Rock={Rock} Paper={Paper}/>
